@@ -65,6 +65,20 @@ class PostOwnerType(models.Model):
     name = models.CharField(max_length=100, verbose_name='Nume', unique=True)
     description = models.TextField(max_length=1000, verbose_name='Caracteristici', blank=True, null=False, default=DEFAULT_DESCRIPTION)
     
+    class Meta:
+        ordering = ('name', )
+    
+    def __str__(self):
+        """
+            Method to specify what to print in print function.
+        """
+        return str(self.name)
+    
+    def __unicode__(self):
+        """
+            Method to specify what to print in print function for older or funny versions of Python.
+        """
+        return str(self.name)
 
      
 class PostOwner(models.Model):
@@ -75,6 +89,22 @@ class PostOwner(models.Model):
     description = models.TextField(max_length=1000, verbose_name='Caracteristici', blank=True, null=False, default=DEFAULT_DESCRIPTION)
     type = models.ForeignKey(PostOwnerType, on_delete=models.CASCADE, related_name='type')
     
+    class Meta:
+        ordering = ('name', )
+    
+    def __str__(self):
+        """
+            Method to specify what to print in print function.
+        """
+        return str(self.name)
+    
+    def __unicode__(self):
+        """
+            Method to specify what to print in print function for older or funny versions of Python.
+        """
+        return str(self.name)
+
+
     
     
     
