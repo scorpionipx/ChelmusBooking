@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 <head>
-    <title>{% block title %}VED Testing Tools{% endblock title %}</title>
+    <title>{% block title %}Chelmus Booking{% endblock title %}</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <style>
         body {
@@ -42,134 +42,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{% url 'home' %}">VED Testing Tools</a>
+          <a class="navbar-brand" href="{% url 'home' %}">Chelmus Booking</a>
         </div>
         <div class="navbar-collapse collapse">
         {% block mainmenu %}
         {% endblock mainmenu %}
-
-            {% if view.active_link == "Home" %}
-                <a href="{% url 'home' %}" class="btn btn-warning navbar-btn">Home</a>
-            {% else %}
-                <a href="{% url 'home' %}" class="btn btn-primary navbar-btn">Home</a>
-            {% endif %}
-
-            {% if view.active_link == "SystemSignalsHome" %}
-                <a href="{% url 'SystemSignals:home' %}" class="btn btn-warning navbar-btn">VED SS DB <span class="glyphicon glyphicon-play"></span></a>
-            {% else %}
-                <a href="{% url 'SystemSignals:home' %}" class="btn btn-info navbar-btn">VED SS DB <span class="glyphicon glyphicon-play"></span></a>
-            {% endif %}
-
-            {% if view.hide_application_links %}
-            {% else %}
-                {% if view.active_link == "Cluster" %}
-                    <a href="{% url 'SystemSignals:Clusters' %}" class="btn btn-warning navbar-btn">Clusters</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:Clusters' %}" class="btn btn-primary navbar-btn">Clusters</a>
-                {% endif %}
-
-                {% if view.active_link == "Component" %}
-                    <a href="{% url 'SystemSignals:Components' %}" class="btn btn-warning navbar-btn">Components</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:Components' %}" class="btn btn-primary navbar-btn">Components</a>
-                {% endif %}
-
-                {% if view.active_link == "Department" %}
-                    <a href="{% url 'SystemSignals:Departments' %}" class="btn btn-warning navbar-btn">Departments</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:Departments' %}" class="btn btn-primary navbar-btn">Departments</a>
-                {% endif %}
-
-                {% if view.active_link == "Device" %}
-                    <a href="{% url 'SystemSignals:Devices' %}" class="btn btn-warning navbar-btn">Devices</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:Devices' %}" class="btn btn-primary navbar-btn">Devices</a>
-                {% endif %}
-
-                {% if view.active_link == "Platform" %}
-                    <a href="{% url 'SystemSignals:Platforms' %}" class="btn btn-warning navbar-btn">Platforms</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:Platforms' %}" class="btn btn-primary navbar-btn">Platforms</a>
-                {% endif %}
-
-                {% if view.active_link == "Project" %}
-                    <a href="{% url 'SystemSignals:Projects' %}" class="btn btn-warning navbar-btn">Projects</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:Projects' %}" class="btn btn-primary navbar-btn">Projects</a>
-                {% endif %}
-
-                {% if view.active_link == "SystemSignal" %}
-                    <a href="{% url 'SystemSignals:SystemSignals' %}" class="btn btn-warning navbar-btn">System Signals</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:SystemSignals' %}" class="btn btn-primary navbar-btn">System Signals</a>
-                {% endif %}
-
-                {% if view.active_link == "TestAction" %}
-                    <a href="{% url 'SystemSignals:TestActions' %}" class="btn btn-warning navbar-btn">Test Actions</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:TestActions' %}" class="btn btn-primary navbar-btn">Test Actions</a>
-                {% endif %}
-
-                {% if view.active_link == "TestEnvironment" %}
-                    <a href="{% url 'SystemSignals:TestEnvironments' %}" class="btn btn-warning navbar-btn">Test Environments</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:TestEnvironments' %}" class="btn btn-primary navbar-btn">Test Environments</a>
-                {% endif %}
-
-                {% if view.active_link == "Type" %}
-                    <a href="{% url 'SystemSignals:Types' %}" class="btn btn-warning navbar-btn">Types</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:Types' %}" class="btn btn-primary navbar-btn">Types</a>
-                {% endif %}
-
-                {% if view.active_link == "Unit" %}
-                    <a href="{% url 'SystemSignals:Units' %}" class="btn btn-warning navbar-btn">Units</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:Units' %}" class="btn btn-primary navbar-btn">Units</a>
-                {% endif %}
-
-                {% if view.active_link == "Variant" %}
-                    <a href="{% url 'SystemSignals:Variants' %}" class="btn btn-warning navbar-btn">Variants</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:Variants' %}" class="btn btn-primary navbar-btn">Variants</a>
-                {% endif %}
-
-                {% if view.active_link == "MappedSignal" %}
-                    <a href="{% url 'SystemSignals:MappedSignals' %}" class="btn btn-warning navbar-btn">Mapped Signals</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:MappedSignals' %}" class="btn btn-primary navbar-btn">Mapped Signals</a>
-                {% endif %}
-
-                {% if view.active_link == "ProjectVariant" %}
-                    <a href="{% url 'SystemSignals:ProjectVariants' %}" class="btn btn-warning navbar-btn">Project Variants</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:ProjectVariants' %}" class="btn btn-primary navbar-btn">Project Variants</a>
-                {% endif %}
-
-                {% if view.active_link == "SignalRelation" %}
-                    <a href="{% url 'SystemSignals:SignalRelations' %}" class="btn btn-warning navbar-btn">Signal Relations</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:SignalRelations' %}" class="btn btn-primary navbar-btn">Signal Relations</a>
-                {% endif %}
-
-                {% if view.active_link == "SystemSignalType" %}
-                    <a href="{% url 'SystemSignals:SystemSignalTypes' %}" class="btn btn-warning navbar-btn">System Signal Types</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:SystemSignalTypes' %}" class="btn btn-primary navbar-btn">System Signal Types</a>
-                {% endif %}
-
-                {% if view.active_link == "ConstantRelation" %}
-                    <a href="{% url 'SystemSignals:ConstantRelations' %}" class="btn btn-warning navbar-btn">Constant Relations</a>
-                {% else %}
-                    <a href="{% url 'SystemSignals:ConstantRelations' %}" class="btn btn-primary navbar-btn">Constant Relations</a>
-                {% endif %}
-            {% endif %}
-
-			{% if not user.is_authenticated %}
-				<a href="{% url 'login' %}" class="btn btn-success navbar-btn">Login</a>
-			{% else %}
-				<a href="{% url 'logout' %}" class="btn btn-danger navbar-btn">Logout</a>
-			{% endif %}
+		{% if not user.is_authenticated %}
+			<a href="{% url 'login' %}" class="btn btn-success navbar-btn">Autentificare</a>
+			<a href="{% url 'register' %}" class="btn btn-warning navbar-btn">Inregistrare cont nou</a>
+		{% else %}
+			<a href="{% url 'logout' %}" class="btn btn-danger navbar-btn">Deconectare</a>
+		{% endif %}
         </div><!--/.navbar-collapse -->
       </div>
     </div>
@@ -192,13 +75,6 @@
             {% endblock info %}
          </div>
 
-        {% if view.hide_application_links %}
-        {% else %}
-            {% if view.active_link != "SystemSignalsHome" %}
-                <a href="{% url 'SystemSignals:home' %}" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> Home</a>
-                <button class="btn btn-default" onclick=window.history.back()><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
-            {% endif %}
-        {% endif %}
         {% block content %}
         {% endblock content %}
     </div>
