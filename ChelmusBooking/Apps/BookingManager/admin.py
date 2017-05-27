@@ -18,7 +18,7 @@ class PostAdmin(admin.ModelAdmin):
     """
         Post's meta for admin site.
     """
-    list_display = ('pk', 'name', 'post_type', 'description', 'address', 'stars', 'price', 'rating', 'visitors_no', 'posted_on', )
+    list_display = ('pk', 'name', 'post_type', 'owner', 'address', 'stars', 'price', 'rating', 'visitors_no', 'posted_on', )
     ordering = ['name', ]
     empty_value_display = EMPTY_VALUE
     

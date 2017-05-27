@@ -1,0 +1,20 @@
+{% extends '_layouts/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Login | {{ block.super }}{% endblock %}
+
+{% block headline %}<h1>Login to the VED Webapp</h1>{% endblock %}
+
+{% block info %}
+    <h3>
+        System signals database
+    </h3>
+    <p>
+        Please use Windows credentials to access the information within the database!
+    </p>
+{% endblock %}
+
+{% block content %}
+{% crispy form %}
+{% endblock %}

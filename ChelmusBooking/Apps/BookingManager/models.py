@@ -82,7 +82,7 @@ class Post(models.Model):
     """
     owner = models.ForeignKey(PostOwner, verbose_name='Proprietar', on_delete=models.CASCADE, related_name='owner')
     name = models.CharField(max_length=100, verbose_name='Nume', unique=True)
-    post_type = models.ForeignKey(PostType, on_delete=models.CASCADE, related_name='type')
+    post_type = models.ForeignKey(PostType, verbose_name='Clasificare', on_delete=models.CASCADE, related_name='type')
     description = models.TextField(max_length=1000, verbose_name='Caracteristici', blank=True, null=False, default=DEFAULT_DESCRIPTION)
     address = models.TextField(max_length=250, verbose_name='Contact', blank=True, null=False)
     stars = models.IntegerField(verbose_name='Stele', unique=False, default = 1)

@@ -1,0 +1,34 @@
+{% extends '_layouts/base.html' %}
+
+{% block headline %}<h1>Welcome to VED Testing tool Webapp!</h1>{% endblock headline %}
+
+{% block mainmenu %}
+{% endblock mainmenu %}
+
+{% block info %}
+    {% if user.is_authenticated %}
+        <p>
+            Welcome, {{ user.first_name }}!
+        </p>
+
+        <p>For any suggestion or issue you have encountered please write us here: <a href=http://git-ved-test1.conti.de/cs-test-ias/SystemSignals/issues  class="btn btn-danger navbar-btn" target="_blank">Submit issue</a></p>
+    {% else %}
+        <p>
+            Hello, CONTI  colleague!
+        </p>
+        <p>
+            To access and to have a pleasant experience on this platform, please:
+            <ol>
+                <li><p>Use Google Chrome browser</p></li>
+                <li><p>Use Windows credentials for access</p></li>
+            </ol>
+        </p>
+
+    {% endif %}
+
+
+{% endblock info %}
+
+{% block content %}
+
+{% endblock content %}
