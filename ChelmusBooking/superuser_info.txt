@@ -1,0 +1,3 @@
+username: chelmus_stefan
+password: Qwerty123
+E-mail:   chelmus.stefan@gmail.com
