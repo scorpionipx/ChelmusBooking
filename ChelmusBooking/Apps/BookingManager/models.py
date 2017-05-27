@@ -1,12 +1,15 @@
 from django.db import models
 
+DEFAULT_DESCRIPTION = '-no-description-'
+
 # Create your models here.
 
-class PostType(models.Model)
+class PostType(models.Model):
     """
         Class used to manage PostType table within DB. It specifies post's type: hotel, pension, cruise etc...
     """
     name = models.CharField(max_length=100, verbose_name='Name', unique=True)
+    description = models.TextField(max_length=1000, verbose_name='Description', blank=True, null=False, default=DEFAULT_DESCRIPTION)
     
     class Meta:
         ordering = ('name', )
@@ -24,13 +27,13 @@ class PostType(models.Model)
         return str(self.name)
 
 
-class Post(models.Models):
+class Post(models.Model):
     """
         Class used to handle Post table within databse.
     """
     name = models.CharField(max_length=100, verbose_name='Name', unique=True)
     post_type = models.ForeignKey(PostType, on_delete=models.CASCADE, related_name='type')
-    description = models.TextField(max_length=1000, verbose_name='Description', blank=True, null=False)
+    description = models.TextField(max_length=1000, verbose_name='Description', blank=True, null=False, default=DEFAULT_DESCRIPTION)
     address = models.TextField(max_length=250, verbose_name='Address', blank=True, null=False)
     stars = models.CharField(max_length=10, verbose_name='Stars', unique=True)
     rating = models.CharField(max_length=10, verbose_name='Rating', unique=True)
@@ -39,7 +42,7 @@ class Post(models.Models):
     
     class Meta:
         ordering = ('name', )
-        unique_together = (('name', 'type'),)
+        unique_together = (('name', 'post_type'),)
         
     def __str__(self):
         """
