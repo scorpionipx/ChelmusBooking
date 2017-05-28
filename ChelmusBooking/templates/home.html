@@ -3,10 +3,13 @@
 {% block headline %}<h1>Bun venit - Chelmus Booking!</h1>{% endblock headline %}
 
 {% block mainmenu %}
+
 {% endblock mainmenu %}
 
 {% block info %}
     {% if user.is_authenticated %}
+		<img src="images/banner.jpg" alt="Smiley face">
+		<br>
         <p>
             Bun venit, {{ user.username }}!
         </p>
