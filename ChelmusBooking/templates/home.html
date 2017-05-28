@@ -1,5 +1,7 @@
 {% extends '_layouts/base.html' %}
 
+{% load static %}
+
 {% block headline %}<h1>Bun venit - Chelmus Booking!</h1>{% endblock headline %}
 
 {% block mainmenu %}
@@ -8,7 +10,7 @@
 
 {% block info %}
     {% if user.is_authenticated %}
-		<img src="images/banner.jpg" alt="Smiley face">
+		<img src="static/images/banner.jpg" alt="My image">
 		<br>
         <p>
             Bun venit, {{ user.username }}!
